@@ -110,9 +110,9 @@ HELP_MSG = "Click the button below to get help manu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
 
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/29a1f88c7f200d4959359.jpg) 」────
+────「 [{}]() 」────
 *ʜᴇʏ! {},*
-*ɪ ᴀᴍ 𝙈𝘼𝙍𝙄𝙉 ᴀ ᴍᴜʟᴛɪғᴜɴᴄᴛɪᴏɴᴀʟ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.*
+*ɪ ᴀᴍ Oʙɪᴛᴏ Uᴄʜɪʜᴀ ᴀ ᴍᴜʟᴛɪғᴜɴᴄᴛɪᴏɴᴀʟ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ✓• *Uᴘᴛɪᴍᴇ:* `{}`
 ✓• `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
@@ -133,7 +133,7 @@ buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text="ɪɴғᴏ", callback_data="marin_basichelp"),
+        InlineKeyboardButton(text="ɪɴғᴏ", callback_data="obito_basichelp"),
         InlineKeyboardButton(text="ɪɴʟɪɴᴇ", switch_inline_query_current_chat=""),
     ],
     [
@@ -143,8 +143,8 @@ buttons = [
 
 
 HELP_STRINGS = """
-Hey there! Myself [Marin](https://telegra.ph/file/733ad56ef80d133fac966.jpg).
-I'm a Queen For Fun and help admins manage their groups ! Have a look at the following for an idea of some of the things I can help you with.
+Hey there! Myself [Oʙɪᴛᴏ Uᴄʜɪʜᴀ](https://telegra.ph/file/6534e68f269164790677a.jpg).
+I'm a villain made by others and I help admins manage their groups ! Have a look at the following for an idea of some of the things I can help you with.
 *Main* commands available:
  ➛ /help: PM's you this message.
  ➛ /help <module name>: PM's you info about that module.
@@ -203,7 +203,7 @@ for module_name in ALL_MODULES:
     if hasattr(imported_module, "__user_settings__"):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
 
-GROUP_START_IMG ="https://telegra.ph/file/b1c5be4ec400b3710d987.mp4"
+GROUP_START_IMG ="https://telegra.ph/file/5bb0ab9d4e258de4f8e6c.mp4"
 
 
 # do not async
@@ -244,7 +244,7 @@ def start(update: Update, context: CallbackContext):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="[♡B𝚊𝚌k♡]", callback_data="help_back"
+                                    text="𝙱𝚊𝚌𝚔", callback_data="help_back"
                                 )
                             ]
                         ]
@@ -279,7 +279,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_animation(
             GROUP_START_IMG,
-            caption="<code> Marin is Here For You\nI am Awake Since</code>: <code>{}</code>".format(
+            caption="<code> Obito is Here For You\nI am Awake Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -287,19 +287,19 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/NobaraSupport"
+                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/Villainevil_Support"
                         )
                     ],
                     [
                         InlineKeyboardButton(
                             text="ᴜᴘᴅᴀᴛᴇs",
-                            url="https://telegram.dog/MarinUpdates",
+                            url="https://telegram.dog/Villainevil_Updates",
                         )
                     ],
                                         [
                         InlineKeyboardButton(
-                            text="AOGIRI UNION",
-                            url="https://telegram.dog/AogiriNetwork",
+                            text="VILLAINS ASSOCIATION",
+                            url="https://telegram.dog/Villains_association",
                         )
                     ],
                 ]
@@ -386,10 +386,10 @@ def help_button(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="【♡Bᴀᴄᴋ♡】", callback_data="help_back"
+                                text="Bᴀᴄᴋ", callback_data="help_back"
                             ),
                             InlineKeyboardButton(
-                                text="【♡Hᴏᴍᴇ♡】", callback_data="marin_back"
+                                text="Hᴏᴍᴇ", callback_data="obito_back"
                             ),
                         ]
                     ]
@@ -431,27 +431,25 @@ def help_button(update, context):
 
     except BadRequest:
         pass
-GROUP_START_IMG = "https://telegra.ph/file/e36d740c802879c68dda6.mp4"
+GROUP_START_IMG = "https://telegra.ph/file/5bb0ab9d4e258de4f8e6c.mp4"
 
-def marin_callback_data(update, context):
+def obito_callback_data(update, context):
     query = update.callback_query
     uptime = get_readable_time((time.time() - StartTime))
-    if query.data == "marin_":
+    if query.data == "obito_":
         query.message.edit_text(
             text="""
-        ❍[Owner](https://t.me/Xtheanonymous)💜
-        ❍[Updates](https://t.me/NobaraSupport)🧡
-        ❍[Suppσrt](https://t.me/NobaraSupport)🤍
-        ❍[Suppσrt](https://t.me/NobaraSupport)💚
-        ❍ [ChatGrp](https://t.me/AnimeChatAura)❤️
-        ✨[Vc Player Help](https://telegra.ph/file/bc78aaf26976f892d6478.jpg)✨""",
+        ❍[Owner](https://t.me/Namikaze_2op)
+        ❍[Updates](https://t.me/Villainevil_Updates)
+        ❍[Suppσrt](https://t.me/Villainevil_Support)
+        ❍ [Konoha](https://t.me/konoha_chatgc)""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="♡Bᴀᴄᴋ♡", callback_data="marin_back")]]
+                [[InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="obito_back")]]
             ),
         )
-    elif query.data == "marin_basichelp":
+    elif query.data == "obito_basichelp":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
@@ -464,26 +462,26 @@ def marin_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴀᴅᴍɪɴ", callback_data="marin_admin"),
-                        InlineKeyboardButton(text="ɴᴏᴛᴇs", callback_data="marin_notes"),
+                        InlineKeyboardButton(text="ᴀᴅᴍɪɴ", callback_data="obito_admin"),
+                        InlineKeyboardButton(text="ɴᴏᴛᴇs", callback_data="obito_notes"),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", callback_data="NobaraSupport"
+                            text="sᴜᴘᴘᴏʀᴛ", callback_data="Villainevil_Support"
                         ),
                         InlineKeyboardButton(
-                            text="ᴄʀᴇᴅɪᴛ", callback_data="marin_credits"
+                            text="ᴄʀᴇᴅɪᴛ", callback_data="obito_credits"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="♡Bᴀᴄᴋ♡", callback_data="marin_back"
+                            text="Bᴀᴄᴋ", callback_data="obito_back"
                         ),
                     ],
                 ]
             ),
         )
-    elif query.data == "marin_admin":
+    elif query.data == "obito_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
             f"\nCongragulations, Miss Marin now ready to manage your group."
@@ -499,14 +497,14 @@ def marin_callback_data(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="♡Bᴀᴄᴋ♡", callback_data="marin_basichelp"
+                            text="Bᴀᴄᴋ", callback_data="obito_basichelp"
                         )
                     ]
                 ]
             ),
         )
 
-    elif query.data == "marin_notes":
+    elif query.data == "obito_notes":
         query.message.edit_text(
             text=f"<b> Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -517,70 +515,65 @@ def marin_callback_data(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="♡Bᴀᴄᴋ♡", callback_data="marin_basichelp"
+                            text="Bᴀᴄᴋ", callback_data="obito_basichelp"
                         )
                     ]
                 ]
             ),
         )
-    elif query.data == "Nobarasupport":
+    elif query.data == "Villainevilsupport":
         query.message.edit_text(
-            text="* Marin support chats*" "\nJoin Support Group/Channel",
+            text="* Obito Uchiha support chats*" "\nJoin Support Group/Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", url="t.me/NobaraSupport"),
+                        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", url="t.me/Villainevil_Support"),
                         InlineKeyboardButton(
-                            text="ᴠᴄ ʜᴇʟᴘ", url="https://telegra.ph/file/bc78aaf26976f892d6478.jpg"
+                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/Villainevil_Support"
+                        ),
+                        InlineKeyboardButton(
+                            text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Villainevil_Updates"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/NobaraSupport"
-                        ),
-                        InlineKeyboardButton(
-                            text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/NobaraSupport"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="♡Bᴀᴄᴋ♡", callback_data="marin_basichelp"
+                            text="Bᴀᴄᴋ", callback_data="obito_basichelp"
                         ),
                     ],
                 ]
             ),
         )
-    elif query.data == "marin_credits":
+    elif query.data == "obito_credits":
         query.message.edit_text(
-            text=f"<b>Marin Riders</b>\n"
-            f"\nHere Some Developers Helping in Making The Marin",
+            text=f"<b>Obito Riders</b>\n"
+            f"\nHere Some Developers Helping in Making The Obito",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Xtheanonymous"),
+                        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Namikaze_2op"),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ", url="https://github.com/AuraMoon55"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠ", url="https://t.me/Xtheanonymous"
+                            text="ᴅᴇᴠ", url="https://t.me/Villainevil_support"
                         ),
                         InlineKeyboardButton(
-                            text="ꜱᴜᴅᴏ", url="https://t.me/NobaraSupport"
+                            text="ꜱᴜᴅᴏ", url="https://t.me/Villainevil_Support"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="♡Bᴀᴄᴋ♡", callback_data="marin_basichelp"
+                            text="Bᴀᴄᴋ", callback_data="obito_basichelp"
                         ),
                     ],
                 ]
             ),
         )
-    elif query.data == "marin_back":
+    elif query.data == "obito_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
             PM_START_TEXT.format(
@@ -631,7 +624,7 @@ def get_help(update, context):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="[♡Bᴀᴄᴋ♡]", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="help_back")]]
             ),
         )
 
@@ -702,7 +695,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="♡Bᴀᴄᴋ♡",
+                                text="Bᴀᴄᴋ",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -801,7 +794,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 2070119160 and DONATION_LINK:
+        if OWNER_ID and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -851,7 +844,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                " I am ready to work [.](https://telegra.ph/file/e36d740c802879c68dda6.mp4)",
+                " I am ready to work [.](https://telegra.ph/file/5414c227f4c05d0f18aa6.jpg)",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
@@ -875,7 +868,7 @@ def main():
     )
 
     data_callback_handler = CallbackQueryHandler(
-        marin_callback_data, pattern=r"marin_", run_async=True
+        obito_callback_data, pattern=r"obito_", run_async=True
     )
     donate_handler = DisableAbleCommandHandler("donate", donate, run_async=True)
     migrate_handler = MessageHandler(
@@ -905,7 +898,7 @@ def main():
 
     else:
         LOGGER.info(
-            f"Marin, Using long polling. | BOT: [@{dispatcher.bot.username}]"
+            f"Obito, Using long polling. | BOT: [@{dispatcher.bot.username}]"
         )
         updater.start_polling(
             timeout=15,

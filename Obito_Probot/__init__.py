@@ -266,11 +266,11 @@ except BaseException:
     sys.exit(1)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("Marin", API_ID, API_HASH)
-pbot = Client("Marinpbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+telethn = TelegramClient("Obito", API_ID, API_HASH)
+pbot = Client("Obitopbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
-print("[AOGIRI]: Connecting To Marin • Data Center • Mumbai • MongoDB Database")
+print("[VILLAINS]: Connecting To Obito • Data Center • Mumbai • MongoDB Database")
 mongodb = MongoClient(MONGO_DB_URL, MONGO_PORT)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
