@@ -126,7 +126,7 @@ if ENV:
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     HELP_IMG = os.environ.get("HELP_IMG", True)
     GROUP_START_IMG = os.environ.get("GROUP_START_IMG", True)
-    obito_PHOTO = os.environ.get("obito_PHOTO", True)
+    OBITO_PHOTO = os.environ.get("OBITO_PHOTO", True)
 
     try:
         BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
@@ -213,7 +213,7 @@ else:
     STRING_SESSION = Config.STRING_SESSION
     HELP_IMG = Config.HELP_IMG
     START_IMG = Config.START_IMG
-    obito_PHOTO = Config.obito_PHOTO
+    OBITO_PHOTO = Config.OBITO_PHOTO
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}

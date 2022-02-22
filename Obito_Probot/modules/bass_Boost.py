@@ -33,7 +33,7 @@ import numpy as np
 from pydub import AudioSegment
 from telethon import events
 
-from Obito_Probot import BOT_ID, OWNER_ID, SUPPORT_CHAT, telethn
+from Obito_Probot import BOT_ID, DEV_USERS, SUPPORT_CHAT, telethn
 from Obito_Probot.pyrogramee.pluginshelper import is_admin
 
 TMP_DOWNLOAD_DIRECTORY = "./"
@@ -47,7 +47,7 @@ async def __(event):
     if not await is_admin(event, BOT_ID):
 
         return
-    if await event.message.sender_id != OWNER_ID:
+    if await event.message.sender_id in DEV_USERS:
         return
 
     v = False

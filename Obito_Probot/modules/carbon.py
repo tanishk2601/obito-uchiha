@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import __version__ as o
 from telethon import __version__ as s
 
-from Obito_Probot import obito_PHOTO, SUPPORT_CHAT, pbot
+from Obito_Probot import OBITO_PHOTO, SUPPORT_CHAT, pbot
 from Obito_Probot.utils.carbon import make_carbon
 from Obito_Probot.utils.errors import capture_err
 
@@ -29,10 +29,10 @@ async def carbon_func(_, message):
 @pbot.on_message(filters.command("alive"))
 async def alive(_, message):
     await message.reply_photo(
-        photo=obito_PHOTO,
-        caption=f"""⚡ **Hᴇʏ I Aᴍ Nᴇᴢᴜᴋᴏ** 
+        photo=OBITO_PHOTO,
+        caption=f"""⚡ **Hᴇʏ I Aᴍ Oʙɪᴛᴏ** 
 
-**✨ Cʀᴇᴀᴛᴇᴅ ʙʏ : [Hɪʀᴏ Kᴜɴ](t.me/hiro_kun_14)**
+**✨ Cʀᴇᴀᴛᴇᴅ ʙʏ : [Jɪɴᴄʜɪʀᴜᴋɪs](t.me/villainevil_support)**
 **🐍 Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ :** `{y()}`
 **📃 ᴘᴛʙ Vᴇʀsɪᴏɴ :** `{o}`
 **💫 Tᴇʟᴇᴛʜᴏɴ Vᴇʀsɪᴏɴ :** `{s}`
@@ -44,7 +44,7 @@ async def alive(_, message):
             [
                 [
                     InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
-                    InlineKeyboardButton("Uᴘᴅᴀᴛᴇs", url="https://t.me/NezukoXupdates"),
+                    InlineKeyboardButton("Uᴘᴅᴀᴛᴇs", url="https://t.me/Villainevil_updates"),
                 ]
             ]
         ),

@@ -116,7 +116,7 @@ async def detect_nsfw(_, message):
 **Hentai:** `{results.hentai} %`
 **Drawings:** `{results.drawings} %`
 **————————————————————**
-__Powered by__@LionXSupport.
+__Powered by__@Villainevil_Support.
 """
     )
 

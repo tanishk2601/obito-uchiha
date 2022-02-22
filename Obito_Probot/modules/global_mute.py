@@ -291,13 +291,13 @@ def gmutestat(update, context):
             sql.enable_gmutes(update.effective_chat.id)
             update.effective_message.reply_text(
                 "I've enabled gmutes in this group. This will help protect you "
-                "from spammers, unsavoury characters, and Anirudh."
+                "from spammers, unsavoury characters, and Nine Bish."
             )
         elif args[0].lower() in ["off", "no"]:
             sql.disable_gmutes(update.effective_chat.id)
             update.effective_message.reply_text(
                 "I've disabled gmutes in this group. GMutes wont affect your users "
-                "anymore. You'll be less protected from Anirudh though!"
+                "anymore. You'll be less protected from Nine Bish though!"
             )
     else:
         update.effective_message.reply_text(

@@ -67,7 +67,7 @@ async def lego(event):
 
         img.save(fname2, "png")
 
-        await tbot.send_file(event.chat_id, fname2, caption="Made By @NezukoXRobot")
+        await tbot.send_file(event.chat_id, fname2, caption="Made By @Obito_Probot")
 
         if os.path.exists(fname2):
 
@@ -75,7 +75,7 @@ async def lego(event):
 
     except Exception as e:
 
-        await event.reply(f"Error Report @NezukoXSupport, {e}")
+        await event.reply(f"Error Report @Villainevil_Support, {e}")
 
 
 @register(pattern="^/wlogo ?(.*)")
@@ -138,7 +138,7 @@ async def lego(event):
 
         img.save(fname2, "png")
 
-        await tbot.send_file(event.chat_id, fname2, caption="Made By @NezukoXRobot")
+        await tbot.send_file(event.chat_id, fname2, caption="Made By @Obito_Probot")
 
         if os.path.exists(fname2):
 
@@ -146,7 +146,7 @@ async def lego(event):
 
     except Exception as e:
 
-        await event.reply(f"Error Report @NezukoXSupport, {e}")
+        await event.reply(f"Error Report @Villainevil_Support, {e}")
 
 
 file_help = os.path.basename(__file__)

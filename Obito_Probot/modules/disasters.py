@@ -72,16 +72,16 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in REDLIONS:
-        message.reply_text("This member is already a RedLion Disaster")
+        message.reply_text("This member is already a Kage")
         return ""
 
     if user_id in SPRYZONS:
-        rt += "Requested HA to promote a Spryzon Disaster to RedLion."
+        rt += "Requested Jinchurikis to promote an Anbu to Kage."
         data["supports"].remove(user_id)
         SPRYZONS.remove(user_id)
 
     if user_id in LUINORS:
-        rt += "Requested HA to promote a Luinor Disaster to RedLion."
+        rt += "Requested Jinchurikis to promote a Chunin to Kage."
         data["whitelists"].remove(user_id)
         LUINORS.remove(user_id)
 
@@ -93,7 +93,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt
-        + "\nSuccessfully set Disaster level of {} to RedLion!".format(
+        + "\nSuccessfully set Disaster level of {} to Kage!".format(
             user_member.first_name
         )
     )
@@ -133,16 +133,16 @@ def addsupport(
         data = json.load(infile)
 
     if user_id in REDLIONS:
-        rt += "Requested HA to demote this RedLion to Spryzon"
+        rt += "Requested Jinchurikis to demote this Kage to Anbu"
         data["sudos"].remove(user_id)
         REDLIONS.remove(user_id)
 
     if user_id in SPRYZONS:
-        message.reply_text("This user is already a Spryzon Disaster.")
+        message.reply_text("This user is already an Anbu.")
         return ""
 
     if user_id in LUINORS:
-        rt += "Requested HA to promote this Luinor Disaster to Spryzon"
+        rt += "Requested Jinchurikis to promote this Chunin to Anbu"
         data["whitelists"].remove(user_id)
         LUINORS.remove(user_id)
 
@@ -153,7 +153,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Spryzon Disaster!"
+        rt + f"\n{user_member.first_name} was added as an Anbu!"
     )
 
     log_message = (
@@ -188,17 +188,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in REDLIONS:
-        rt += "This member is a RedLion Disaster, Demoting to Luinor."
+        rt += "This member is a Kage, Demoting to Chunin."
         data["sudos"].remove(user_id)
         REDLIONS.remove(user_id)
 
     if user_id in SPRYZONS:
-        rt += "This user is already a Spryzon Disaster, Demoting to Luinor."
+        rt += "This user is already an Anbu, Demoting to Chunin."
         data["supports"].remove(user_id)
         SPRYZONS.remove(user_id)
 
     if user_id in LUINORS:
-        message.reply_text("This user is already a Luinor Disaster.")
+        message.reply_text("This user is already a Chunin.")
         return ""
 
     data["whitelists"].append(user_id)
@@ -208,7 +208,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Luinor Disaster!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to a Chunin!"
     )
 
     log_message = (
@@ -243,22 +243,22 @@ def addfafnir(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in REDLIONS:
-        rt += "This member is a RedLion Disaster, Demoting to Fafnir."
+        rt += "This member is a Kage, Demoting to Jounin."
         data["sudos"].remove(user_id)
         REDLIONS.remove(user_id)
 
     if user_id in SPRYZONS:
-        rt += "This user is already a Spryzon Disaster, Demoting to Fafnir."
+        rt += "This user is already an Anbu, Demoting to Jounin."
         data["supports"].remove(user_id)
         SPRYZONS.remove(user_id)
 
     if user_id in LUINORS:
-        rt += "This user is already a Luinor Disaster, Demoting to Fafnir."
+        rt += "This user is already a Chunin, Demoting to Jounin."
         data["whitelists"].remove(user_id)
         LUINORS.remove(user_id)
 
     if user_id in FAFNIRS:
-        message.reply_text("This user is already a Fafnir.")
+        message.reply_text("This user is already a Jounin.")
         return ""
 
     data["fafnirs"].append(user_id)
@@ -268,11 +268,11 @@ def addfafnir(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Fafnir Disaster!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to a Jounin!"
     )
 
     log_message = (
-        f"#FAFNIR\n"
+        f"#JOUNIN\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))} \n"
         f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
@@ -302,7 +302,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in REDLIONS:
-        message.reply_text("Requested HA to demote this user to Civilian")
+        message.reply_text("Requested Jinchurikis to demote this user to Civilian")
         REDLIONS.remove(user_id)
         data["sudos"].remove(user_id)
 
@@ -321,7 +321,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a RedLion Disaster!")
+        message.reply_text("This user is not a Kage!")
         return ""
 
 
@@ -344,7 +344,7 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in SPRYZONS:
-        message.reply_text("Requested HA to demote this user to Civilian")
+        message.reply_text("Requested Jinchurikis to demote this user to Civilian")
         SPRYZONS.remove(user_id)
         data["supports"].remove(user_id)
 
@@ -363,7 +363,7 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Spryzon level Disaster!")
+        message.reply_text("This user is not an Anbu!")
         return ""
 
 
@@ -404,7 +404,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Luinor Disaster!")
+        message.reply_text("This user is not a Chunin!")
         return ""
 
 
@@ -435,7 +435,7 @@ def removefafnir(update: Update, context: CallbackContext) -> str:
             json.dump(data, outfile, indent=4)
 
         log_message = (
-            f"#UNFAFNIR\n"
+            f"#UNJOUNIN\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
         )
@@ -445,15 +445,15 @@ def removefafnir(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Fafnir Disaster!")
+        message.reply_text("This user is not a Jounin!")
         return ""
 
 
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Luinor Disasters 🐺:</b>\n"
+    reply = "<b>Known Chunins:</b>\n"
     m = update.effective_message.reply_text(
-        "<code>Gathering Luinors..</code>", parse_mode=ParseMode.HTML
+        "<code>Gathering Chunins..</code>", parse_mode=ParseMode.HTML
     )
     bot = context.bot
     for each_user in LUINORS:
@@ -469,9 +469,9 @@ def whitelistlist(update: Update, context: CallbackContext):
 
 @whitelist_plus
 def fafnirlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Fafnir Disasters 🐯:</b>\n"
+    reply = "<b>Known Jounins:</b>\n"
     m = update.effective_message.reply_text(
-        "<code>Gathering Fafnirs..</code>", parse_mode=ParseMode.HTML
+        "<code>Gathering Jounins..</code>", parse_mode=ParseMode.HTML
     )
     bot = context.bot
     for each_user in FAFNIRS:
@@ -488,9 +488,9 @@ def fafnirlist(update: Update, context: CallbackContext):
 def supportlist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering Spryzons..</code>", parse_mode=ParseMode.HTML
+        "<code>Gathering Anbus..</code>", parse_mode=ParseMode.HTML
     )
-    reply = "<b>Known Spryzon Disasters 👹:</b>\n"
+    reply = "<b>Known Anbus:</b>\n"
     for each_user in SPRYZONS:
         user_id = int(each_user)
         try:
@@ -505,10 +505,10 @@ def supportlist(update: Update, context: CallbackContext):
 def sudolist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering Redlions..</code>", parse_mode=ParseMode.HTML
+        "<code>Gathering Kages..</code>", parse_mode=ParseMode.HTML
     )
     true_sudo = list(set(REDLIONS) - set(DEV_USERS))
-    reply = "<b>Known RedLion Disasters 🐉:</b>\n"
+    reply = "<b>Known Kages:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -523,10 +523,10 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering Devs..</code>", parse_mode=ParseMode.HTML
+        "<code>Gathering Jinchurikis..</code>", parse_mode=ParseMode.HTML
     )
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Hero Association Members ⚡️:</b>\n"
+    reply = "<b>Jinchurikis ⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -608,37 +608,37 @@ def devlist(update: Update, context: CallbackContext):
 # ❍ /logs Get heroku dyno logs.
 #
 # `⚠️ Read from top`
-# Visit @{SUPPORT_CHAT} for more information.
+# Visit @{SUPPORT_CJinchurikisT} for more information.
 # """
 
-SUDO_HANDLER = CommandHandler(("addsudo", "addredlion"), addsudo, run_async=True)
+SUDO_HANDLER = CommandHandler(("addsudo", "addkage"), addsudo, run_async=True)
 SUPPORT_HANDLER = CommandHandler(
-    ("addsupport", "addspryzon"), addsupport, run_async=True
+    ("addsupport", "addanbu"), addsupport, run_async=True
 )
-FAFNIR_HANDLER = CommandHandler(("addfafnir"), addfafnir, run_async=True)
+FAFNIR_HANDLER = CommandHandler(("addjounin"), addfafnir, run_async=True)
 WHITELIST_HANDLER = CommandHandler(
-    ("addwhitelist", "addluinor"), addwhitelist, run_async=True
+    ("addwhitelist", "addchunin"), addwhitelist, run_async=True
 )
 UNSUDO_HANDLER = CommandHandler(
-    ("removesudo", "removeredlion"), removesudo, run_async=True
+    ("rmkage", "removekage"), removesudo, run_async=True
 )
 UNSUPPORT_HANDLER = CommandHandler(
-    ("removesupport", "removespryzon"), removesupport, run_async=True
+    ("rmanbu", "removeanbu"), removesupport, run_async=True
 )
-UNFAFNIR_HANDLER = CommandHandler(("removefafnir"), removefafnir, run_async=True)
+UNFAFNIR_HANDLER = CommandHandler(("rmjounin"), removefafnir, run_async=True)
 UNWHITELIST_HANDLER = CommandHandler(
-    ("removewhitelist", "removeluinor"), removewhitelist, run_async=True
+    ("rmchunin", "removechunin"), removewhitelist, run_async=True
 )
 
 WHITELISTLIST_HANDLER = CommandHandler(
-    ["whitelistlist", "luinors"], whitelistlist, run_async=True
+    ["whitelistlist", "chunins"], whitelistlist, run_async=True
 )
-FAFNIRLIST_HANDLER = CommandHandler(["fafnirs"], fafnirlist, run_async=True)
+FAFNIRLIST_HANDLER = CommandHandler(["jounins"], fafnirlist, run_async=True)
 SUPPORTLIST_HANDLER = CommandHandler(
-    ["supportlist", "spryzon"], supportlist, run_async=True
+    ["supportlist", "anbus"], supportlist, run_async=True
 )
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "REDLIONS"], sudolist, run_async=True)
-DEVLIST_HANDLER = CommandHandler(["devlist", "heroes"], devlist, run_async=True)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "kages"], sudolist, run_async=True)
+DEVLIST_HANDLER = CommandHandler(["devlist", "jinchurikis"], devlist, run_async=True)
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)

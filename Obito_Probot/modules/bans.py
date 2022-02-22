@@ -98,23 +98,23 @@ def ban(update: Update, context: CallbackContext) -> str:
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
-            message.reply_text("Trying to put me against a Master huh?")
+            message.reply_text("Trying to put me against Hokage huh?")
         elif user_id in DEV_USERS:
-            message.reply_text("I can't act against our own.")
+            message.reply_text("I can't act against Jinchurikis")
         elif user_id in REDLIONS:
             message.reply_text(
-                "Fighting this Bersekser here will put user lives at risk."
+                "Fighting this Kage here will put user lives at risk."
             )
         elif user_id in SPRYZONS:
             message.reply_text(
-                "Bring an order from Master Servant to fight a Assasin servant."
+                "Bring an order from Jinchurikis to fight an Anbu."
             )
         elif user_id in FAFNIRS:
             message.reply_text(
-                "Bring an order from Master Servant to fight a Lancer servant."
+                "Bring an order from Jinchurikis to fight a Chunin."
             )
         elif user_id in LUINORS:
-            message.reply_text("Rider abilities make them ban immune!")
+            message.reply_text("Jounin abilities make them ban immune!")
         else:
             message.reply_text("This user has immunity and cannot be banned.")
         return log_message

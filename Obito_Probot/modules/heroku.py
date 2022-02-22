@@ -31,7 +31,7 @@ import os
 import heroku3
 import requests
 
-from Obito_Probot import HEROKU_API_KEY, HEROKU_APP_NAME, OWNER_ID
+from Obito_Probot import HEROKU_API_KEY, HEROKU_APP_NAME, OWNER_ID, DEV_USERS
 from Obito_Probot.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -42,7 +42,7 @@ Heroku = heroku3.from_key(HEROKU_API_KEY)
 async def variable(var):
     if var.fwd_from:
         return
-    if var.sender_id != OWNER_ID:
+    if var.sender_id in DEV_USERS:
         return
     """
     Manage most of ConfigVars setting, set new var, get current var,
@@ -128,7 +128,7 @@ async def variable(var):
 async def dyno_usage(dyno):
     if dyno.fwd_from:
         return
-    if dyno.sender_id != OWNER_ID:
+    if dyno.sender_id in DEV_USERS:
         return
     """
     Get your account Dyno Usage

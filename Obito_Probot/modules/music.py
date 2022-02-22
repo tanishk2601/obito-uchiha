@@ -16,7 +16,7 @@ from Obito_Probot import pbot
 from Obito_Probot.conf import get_str_key
 from Obito_Probot.pyrogramee.pluginshelper import get_text, progress
 
-GENIUS = get_str_key("GENIUS_API_TOKEN", None)
+GENIUS = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
 import youtube_dl
 from youtube_search import YoutubeSearch
 

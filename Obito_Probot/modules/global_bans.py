@@ -81,28 +81,28 @@ def gban(update: Update, context: CallbackContext):
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "That user is part of the Association\nI can't act against our own."
+            "That user is part of the Jinchurikis\nI can't act against our own."
         )
         return
 
     if int(user_id) in REDLIONS:
         message.reply_text(
-            "I spy, with my little eye... a disaster! Why are you guys turning on each other?"
+            "I spy, with my little eye... a Kage! Why are you guys turning on each other?"
         )
         return
 
     if int(user_id) in SPRYZONS:
         message.reply_text(
-            "OOOH someone's trying to gban a SPRYZON Disaster! *grabs popcorn*"
+            "OOOH someone's trying to gban an Anbu! *grabs popcorn*"
         )
         return
 
     if int(user_id) in FAFNIRS:
-        message.reply_text("That's a FAFNIR! They cannot be banned!")
+        message.reply_text("That's a Jounin ! They cannot be banned!")
         return
 
     if int(user_id) in LUINORS:
-        message.reply_text("That's a LUINOR! They cannot be banned!")
+        message.reply_text("That's a Chunin! They cannot be banned!")
         return
 
     if user_id == bot.id:

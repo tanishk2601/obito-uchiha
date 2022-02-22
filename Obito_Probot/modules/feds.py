@@ -605,19 +605,19 @@ def fed_ban(update: Update, context: CallbackContext):
         return
 
     if user_id == OWNER_ID:
-        message.reply_text("Disaster level God cannot be fed banned!")
+        message.reply_text("Hokage cannot be fed banned!")
         return
 
     if int(user_id) in REDLIONS:
-        message.reply_text("REDLIONS cannot be fed banned!")
+        message.reply_text("Kages cannot be fed banned!")
         return
 
     if int(user_id) in FAFNIRS:
-        message.reply_text("Fafnirs cannot be fed banned!")
+        message.reply_text("Jounins cannot be fed banned!")
         return
 
     if int(user_id) in LUINORS:
-        message.reply_text("Luinors cannot be fed banned!")
+        message.reply_text("Chunins cannot be fed banned!")
         return
 
     if user_id in [777000, 1415798813]:
