@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/MarinRobot
-RUN git clone -b shiken https://github.com/Unknown-san/MarinRobot /root/MarinRobot
-WORKDIR /root/MarinRobot
+# Copy Python Requirements to /root/Obito_Probot
+RUN git clone -b shiken https://github.com/AuraMoon55/Obito-Probot /root/Obito_Probot
+WORKDIR /root/Obito_Probot
 
-#Copy config file to /root/MarinRobot/MarinRobot
-COPY ./MarinRobot/sample_config.py ./MarinRobot/config.py* /root/MarinRobot/MarinRobot/
+#Copy config file to /root/Obito_Probot/Obito_Probot
+COPY ./Obito_Probot/sample_config.py ./Obito_Probot/config.py* /root/Obito_Probot/Obito_Probot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","MarinRobot"]
+CMD ["python3","-m","Obito_Probot"]
