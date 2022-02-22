@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (C) 2021 Unknown-san
+Copyright (C) 2021 AuraMoon55
 
 This file is part of @Obito_Probot (Telegram Bot)
 

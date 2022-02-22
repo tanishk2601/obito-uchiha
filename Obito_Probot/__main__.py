@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (C) 2021 Unknown-san 
+Copyright (C) 2021 AuraMoon55 
 
 This file is part of @Obito_Probot (Telegram Bot)
 
@@ -561,7 +561,7 @@ def marin_callback_data(update, context):
                     [
                         InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="t.me/Xtheanonymous"),
                         InlineKeyboardButton(
-                            text="ɢɪᴛʜᴜʙ", url="https://github.com/Unknown-san"
+                            text="ɢɪᴛʜᴜʙ", url="https://github.com/AuraMoon55"
                         ),
                     ],
                     [
