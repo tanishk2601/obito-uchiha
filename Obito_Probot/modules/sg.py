@@ -3,7 +3,7 @@ from telethon.tl import functions, types
 
 from Obito_Probot import telethn as tbot
 from Obito_Probot import ubot
-from Obito_Probot.events import register as shasa
+from Obito_Probot.events import register as obito
 
 
 async def is_register_admin(chat, user):
@@ -36,7 +36,7 @@ async def silently_send_message(conv, text):
     return response
 
 
-@shasa(pattern="^/sg ?(.*)")
+@obito(pattern="^/sg ?(.*)")
 async def _(event):
 
     if event.fwd_from:

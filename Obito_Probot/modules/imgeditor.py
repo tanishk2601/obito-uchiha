@@ -451,7 +451,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 __mod_name__ = "Iᴍɢ Eᴅɪᴛᴇʀ"
 __help__ = """
 *IMAGE EDITOR*
-Shasa have some advanced image editing tools inbuilt
+obito have some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
 
  |• `/edit` [reply to image]: Open the image editor

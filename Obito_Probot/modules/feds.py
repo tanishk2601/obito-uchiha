@@ -1411,10 +1411,10 @@ def fed_ban_list(update: Update, context: CallbackContext):
                 backups += json.dumps(json_parser)
                 backups += "\n"
             with BytesIO(str.encode(backups)) as output:
-                output.name = "Shasa_fbanned_users.json"
+                output.name = "obito_fbanned_users.json"
                 update.effective_message.reply_document(
                     document=output,
-                    filename="Shasa_fbanned_users.json",
+                    filename="obito_fbanned_users.json",
                     caption="Total {} User are blocked by the Federation {}.".format(
                         len(getfban),
                         info["fname"],
@@ -1458,10 +1458,10 @@ def fed_ban_list(update: Update, context: CallbackContext):
                 )
                 backups += "\n"
             with BytesIO(str.encode(backups)) as output:
-                output.name = "Shasa_fbanned_users.csv"
+                output.name = "obito_fbanned_users.csv"
                 update.effective_message.reply_document(
                     document=output,
-                    filename="Shasa_fbanned_users.csv",
+                    filename="obito_fbanned_users.csv",
                     caption="Total {} User are blocked by Federation {}.".format(
                         len(getfban),
                         info["fname"],

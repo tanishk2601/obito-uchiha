@@ -1,7 +1,7 @@
 import json
 import os
 
-os.system("pip installPyDictionary")
+os.system("pip install PyDictionary")
 
 import requests
 from PyDictionary import PyDictionary

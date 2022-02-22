@@ -5,7 +5,7 @@ from Obito_Probot import OWNER_ID
 from Obito_Probot import telethn as tbot
 from Obito_Probot.events import register
 
-water = "./Obito_Probot/resources/Shasa.jpg"
+water = "./Obito_Probot/resources/obito.jpg"
 client = tbot
 
 

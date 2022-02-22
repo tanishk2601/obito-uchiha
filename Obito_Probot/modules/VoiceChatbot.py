@@ -30,21 +30,21 @@ async def ai_lycia(url):
     return ai_name
 
 
-@LYCIA.on_message(filters.command("Shasa"))
+@LYCIA.on_message(filters.command("obito"))
 async def Lycia(_, message):
     if len(message.command) < 2:
         await message.reply_text("Lycia AI Voice Chatbot")
         return
     text = message.text.split(None, 1)[1]
     lycia = text.replace(" ", "%20")
-    m = await message.reply_text("Shasa Is Best...")
+    m = await message.reply_text("obito Is Best...")
     try:
         L = await fetch(
-            f"https://api.affiliateplus.xyz/api/chatbot?message={lycia}&botname=Shasa&ownername=@Simpleboy787&user=1"
+            f"https://api.affiliateplus.xyz/api/chatbot?message={lycia}&botname=obito&ownername=@Simpleboy787&user=1"
         )
         chatbot = L["message"]
         VoiceAi = f"https://lyciavoice.herokuapp.com/lycia?text={chatbot}&lang=hi"
-        name = "shasa"
+        name = "obito"
     except Exception as e:
         await m.edit(str(e))
         return

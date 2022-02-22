@@ -126,7 +126,7 @@ if ENV:
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     HELP_IMG = os.environ.get("HELP_IMG", True)
     GROUP_START_IMG = os.environ.get("GROUP_START_IMG", True)
-    SHASA_PHOTO = os.environ.get("SHASA_PHOTO", True)
+    obito_PHOTO = os.environ.get("obito_PHOTO", True)
 
     try:
         BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
@@ -213,7 +213,7 @@ else:
     STRING_SESSION = Config.STRING_SESSION
     HELP_IMG = Config.HELP_IMG
     START_IMG = Config.START_IMG
-    SHASA_PHOTO = Config.SHASA_PHOTO
+    obito_PHOTO = Config.obito_PHOTO
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
@@ -230,12 +230,12 @@ try:
 
     REDIS.ping()
 
-    LOGGER.info("[SHASA]: Connecting To Shasa • Data Center • Mumbai • Redis Database")
+    LOGGER.info("[obito]: Connecting To obito • Data Center • Mumbai • Redis Database")
 
 except BaseException:
 
     raise Exception(
-        "[SHASA ERROR]: Your Shasa • Data Center • Mumbai • Redis Database Is Not Alive, Please Check Again."
+        "[obito ERROR]: Your obito • Data Center • Mumbai • Redis Database Is Not Alive, Please Check Again."
     )
 
 finally:
@@ -243,7 +243,7 @@ finally:
     REDIS.ping()
 
     LOGGER.info(
-        "[SHASA]: Connection To The Shasa • Data Center • Mumbai • Redis Database Established Successfully!"
+        "[obito]: Connection To The obito • Data Center • Mumbai • Redis Database Established Successfully!"
     )
 
 SYL = Sylviorus()

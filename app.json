@@ -1,12 +1,12 @@
 {
-      "name": "Shasa Bot",
+      "name": "obito Bot",
       "description": "An Anime Theme Telegram group management bot.",
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Shasa"
+         "obito"
       ],
     
    "logo":    "https://telegra.ph/file/c3254e92e7672b773f942.jpg",  
@@ -65,7 +65,7 @@
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "missShasa_Gbot"
+         "value": "missobito_Gbot"
       },
       "MONGO_DB_URL": {
          "description": "Required for database connections.",

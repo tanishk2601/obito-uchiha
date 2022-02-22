@@ -1,10 +1,10 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from Obito_Probot import telethn
-from Obito_Probot.events import register as shasa
+from Obito_Probot.events import register as obito
 
 
-@shasa(pattern="^/tagall ?(.*)")
+@obito(pattern="^/tagall ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -16,7 +16,7 @@ async def _(event):
     await event.delete()
 
 
-@shasa(pattern="^/users ?(.*)")
+@obito(pattern="^/users ?(.*)")
 async def _(event):
     if event.fwd_from:
         return

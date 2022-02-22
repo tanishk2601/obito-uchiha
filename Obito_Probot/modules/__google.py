@@ -153,6 +153,78 @@ async def okgoogle(img):
         )
 
 
+@register(pattern=r"^/grs(?: |$)(\d*)")
+async def okgoogle(img):
+    """For .grs command, Google search images and stickers."""
+    if os.path.isfile("okgoogle.png"):
+        os.remove("okgoogle.png")
+
+    message = await img.get_reply_message()
+    if message and message.media:
+        photo = io.BytesIO()
+        await tbot.download_media(message, photo)
+    else:
+        await img.reply("`Reply to photo or sticker nigger.`")
+        return
+
+    if photo:
+        dev = await img.reply("`Processing...`")
+        try:
+            image = Image.open(photo)
+        except OSError:
+            await dev.edit("`Unsupported sexuality, most likely.`")
+            return
+        name = "okgoogle.png"
+        image.save(name, "PNG")
+        image.close()
+        # https://stackoverflow.com/questions/23270175/google-reverse-image-search-using-post-request#28792943
+        searchUrl = "https://www.google.com/searchbyimage/upload"
+        multipart = {"encoded_image": (name, open(name, "rb")), "image_content": ""}
+        response = requests.post(searchUrl, files=multipart, allow_redirects=False)
+        fetchUrl = response.headers["Location"]
+
+        if response != 400:
+            await dev.edit(
+                "`Image successfully uploaded to Google. Maybe.`"
+                "\n`Parsing source now. Maybe.`"
+            )
+        else:
+            await dev.edit("`Google told me to fuck off.`")
+            return
+
+        os.remove(name)
+        match = await ParseSauce(fetchUrl + "&preferences?hl=en&fg=1#languages")
+        guess = match["best_guess"]
+        imgspage = match["similar_images"]
+
+        if guess and imgspage:
+            await dev.edit(f"[{guess}]({fetchUrl})\n\n`Looking for this Image...`")
+        else:
+            await dev.edit("`Can't find this piece of shit.`")
+            return
+
+        if img.pattern_match.group(1):
+            lim = img.pattern_match.group(1)
+        else:
+            lim = 3
+        images = await scam(match, lim)
+        yeet = []
+        for i in images:
+            k = requests.get(i)
+            yeet.append(k.content)
+        try:
+            await tbot.send_file(
+                entity=await tbot.get_input_entity(img.chat_id),
+                file=yeet,
+                reply_to=img,
+            )
+        except TypeError:
+            pass
+        await dev.edit(
+            f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})"
+        )
+
+
 async def ParseSauce(googleurl):
     """Parse/Scrape the HTML code for the info we want."""
 
@@ -277,6 +349,6 @@ __help__ = """
  |• `/github` <username>*:* Get information about a GitHub user.
  |• `/country` <country name>*:* Gathering info about given country
  |• `/imdb` <Movie name>*:* Get full info about a movie with imdb.com
- |• Nezuko <query>*:*   Nezuko answers the query
-  💡Ex: `Nezuko where is India?`
+ |• Obito <query>*:*   Obito answers the query
+  💡Ex: `Obito where is India?`
 """

@@ -51,7 +51,7 @@ async def _(event):
         await tbot.send_file(
             event.chat_id,
             "book.txt",
-            caption="**BOOKS GATHERED SUCCESSFULLY!\n\nBY [SHASA](@Obito_Probot). JOIN THE SUPPORT @ShasaSupport.**",
+            caption="**BOOKS GATHERED SUCCESSFULLY!\n\nBY [obito](@Obito_Probot). JOIN THE SUPPORT @obitoSupport.**",
         )
         os.remove("book.txt")
         await KkK.delete()
