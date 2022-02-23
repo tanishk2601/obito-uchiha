@@ -17,14 +17,14 @@ data = telegraph.create_account(short_name=wibu)
 auth_url = data["auth_url"]
 
 
-@register(pattern="^/t(gm|gt) ?(.*)")
+@register(pattern="^/t(m|t) ?(.*)")
 async def telegrap(event):
     optional_title = event.pattern_match.group(2)
     if event.reply_to_msg_id:
         start = datetime.now()
         reply_msg = await event.get_reply_message()
         input_str = event.pattern_match.group(1)
-        if input_str == "gm":
+        if input_str == "m":
             downloaded_file_name = await Client.download_media(
                 reply_msg,
                 TMP_DOWNLOAD_DIRECTORY
@@ -61,7 +61,7 @@ async def telegrap(event):
                             ]
                         ]
                     )
-        elif input_str == "gt":
+        elif input_str == "t":
             user_object = await Client.get_entity(reply_msg.sender_id)
             title_of_page = user_object.first_name # + " " + user_object.last_name
             # apparently, all Users do not have last_name field

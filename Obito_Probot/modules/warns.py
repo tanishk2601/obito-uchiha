@@ -97,19 +97,19 @@ def warn(
 
     if user.id in FAFNIRS:
         if warner:
-            message.reply_text("Scouts cant be warned.")
+            message.reply_text("Jounins cant be warned.")
         else:
             message.reply_text(
-                "Scout triggered an auto warn filter!\n I can't warn scouts but they should avoid abusing this."
+                "Jounin triggered an auto warn filter!\n I can't warn jounins but they should avoid abusing this."
             )
         return
 
     if user.id in LUINORS:
         if warner:
-            message.reply_text("Garrisons are warn immune.")
+            message.reply_text("Chunins are warn immune.")
         else:
             message.reply_text(
-                "Garrison triggered an auto warn filter!\nI can't warn garrisons but they should avoid abusing this."
+                "Chunin triggered an auto warn filter!\nI can't warn chunins but they should avoid abusing this."
             )
         return
 

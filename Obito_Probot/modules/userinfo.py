@@ -325,32 +325,27 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'Lord'."
+        text += "\n\nThe Disaster level of this person is 'Hokage'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'Dev'."
+        text += "\n\nThis user is member of 'Jinchuriki'."
         disaster_level_present = True
     elif user.id in REDLIONS:
-        text += "\n\nThe Disaster level of this person is 'Mizunoto'."
+        text += "\n\nThe Disaster level of this person is 'Kage'."
         disaster_level_present = True
     elif user.id in SPRYZONS:
-        text += "\n\nThe Disaster level of this person is 'Kanoto'."
+        text += "\n\nThe Disaster level of this person is 'Anbu'."
         disaster_level_present = True
     elif user.id in FAFNIRS:
-        text += "\n\nThe Disaster level of this person is 'Hinoto'."
+        text += "\n\nThe Disaster level of this person is 'Jounin'."
         disaster_level_present = True
     elif user.id in LUINORS:
-        text += "\n\nThe Disaster level of this person is 'Friend'."
-        disaster_level_present = True
-    elif user.id == 5073957473:
-        text += "\n\nThis user is my Hubby."
+        text += "\n\nThe Disaster level of this person is 'Chunin'."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/NobaraUpdates/63">?</a>]'.format(
-            bot.username,
-        )
-
+        text += ' [<a href="https://t.me/Villainevil_Updates/63">⚡</a>]'.
+        
     try:
         user_member = chat.get_member(user.id)
         if user_member.status == "administrator":
@@ -450,7 +445,7 @@ def set_about_me(update: Update, context: CallbackContext):
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     botuptime = get_readable_time((time.time() - StartTime))
-    status = "*╒═══「 Nezuko statistics 」*\n\n"
+    status = "*╒═══「 Obito statistics 」*\n\n"
     status += "*➢ System Start time:* " + str(uptime) + "\n"
     uname = platform.uname()
     status += "*➢ System:* " + str(uname.system) + "\n"
@@ -471,8 +466,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n [✦Updates](https://t.me/MarinUpdates) | [✦Support](https://t.me/NobaraSupport)\n\n"
-            + "╘══「 by [UNKNOWN](https://t.me/XtheAnonymous) 」\n",
+            + f"\n\n [✦Updates](https://t.me/Villainevil_Updates) | [✦Support](https://t.me/Villainevil_Support)\n\n"
+            + "╘══「 by [Villains](https://t.me/Villains_Association) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -484,9 +479,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n [✦Updates](https://t.me/MaRINsUPDATES) | [✦Support](https://t.me/{SUPPORT_CHAT})\n\n"
+                    + f"\n\n [✦Updates](https://t.me/Villainevil_Updates) | [✦Support](https://t.me/Villainevil_Support)\n\n"
                 )
-                + "╘══「 by [Unknown](https://t.me/XtheAnonymous) 」\n"
+                + "╘══「 by [Villains](https://t.me/Villains_Association) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -539,7 +534,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust the Ackermans to set my bio.",
+                "Erm... yeah, I only trust the Jinchurikis to set my bio.",
             )
             return
 
