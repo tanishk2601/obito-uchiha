@@ -44,7 +44,7 @@ from telegram.error import (
     TimedOut,
     Unauthorized,
 )
-from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, MessageHandler
+from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, MessageHandler, CommandHandler
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
@@ -854,8 +854,8 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
-    test_handler = DisableAbleCommandHandler("test", test, run_async=True)
-    start_handler = DisableAbleCommandHandler("start", start, run_async=True)
+    test_handler = CommandHandler("test", test, run_async=True)
+    start_handler = CommandHandler("start", start, run_async=True)
 
     help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
