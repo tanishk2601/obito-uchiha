@@ -14,27 +14,27 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 123456  # integer value, dont use ""
-    API_HASH = "awoo"
-    TOKEN = "BOT_TOKEN"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 1415798813  # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    OWNER_USERNAME = "MdNoor"
-    SUPPORT_CHAT = "Missobito_Gbot"  # Your own group for support, do not add the @
+    API_ID = 2919867 # integer value, dont use ""
+    API_HASH = "90dd95178a8d13a69bfdbc7da68d23a4"
+    TOKEN = "5127077268:AAHbp6XYJSUiYA09gNR6nnUgUJFI7hqYrkc"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 1282021122  # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    OWNER_USERNAME = "Namikaze_2op"
+    SUPPORT_CHAT = "villainevil_Support"  # Your own group for support, do not add the @
     JOIN_LOGGER = (
-        -1001236063876
+        -1001501815938
     )  # Prints any new group the bot is added to, prints just the name and ID.
     EVENT_LOGS = (
-        -1001188058807
+        -1001501815938
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database modules
+    SQLALCHEMY_DATABASE_URI = ""  # needed for any database modules
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
+    SPAMWATCH_API = "AR8UHqVNSDQ0hh0ttShqz~pWkUd1mKperLP1DcC6I7TI4K_WRX2TVgtcWkXwFke6"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
     # OPTIONAL
@@ -47,7 +47,7 @@ class Config(object):
     # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
     FAFNIRS = get_user_list("elevated_users.json", "fafnirs")
     LUINORS = get_user_list("elevated_users.json", "whitelists")
-    DONATION_LINK = None  # EG, paypal
+    DONATION_LINK = "https://ko-fi.com/Auramoon55"# EG, paypal
     CERT_PATH = None
     PORT = 5000
     DEL_CMDS = True  # Delete commands that users dont have access to, like delete /ban if a non admin uses it.
@@ -58,13 +58,13 @@ class Config(object):
     BAN_STICKER = ""  # banhammer marie sticker id, the bot will send this sticker before banning or kicking a user in chat.
     ALLOW_EXCL = True  # Allow ! commands as well as / (Leave this to true so that blacklist can work)
     CASH_API_KEY = (
-        "awoo"  # Get your API key from https://www.alphavantage.co/support/#api-key
+        "TY3UT8H8O3H2SPG7"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
-    TIME_API_KEY = "awoo"  # Get your API key from https://timezonedb.com/api
+    TIME_API_KEY = "T25WTKR2SY9A"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
-        "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
+        ""  # For wallpapers, get one from https://wall.alphacoders.com/api.php
     )
-    AI_API_KEY = "awoo"  # For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
+    AI_API_KEY = ""  # For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
 

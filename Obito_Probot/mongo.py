@@ -6,13 +6,11 @@ from pymongo.errors import ServerSelectionTimeoutError
 
 
 
-MONGO_PORT = "27017"
 MONGO_DB_URI = "mongodb+srv://Hirokun:hirokun_5@cluster0.kprej.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-MONGO_DB = "Obito_Probot"
 
 
 client = MongoClient()
-client = MongoClient(MONGO_DB_URI, 27017)[MONGO_DB]
+client = MongoClient(MONGO_DB_URI)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI, 27017)
 db = motor[MONGO_DB]
 db = client["Obito_Probot"]
